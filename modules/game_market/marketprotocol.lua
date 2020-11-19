@@ -1,4 +1,5 @@
 MarketProtocol = {}
+depotItems = {}
 
 -- private functions
 
@@ -70,7 +71,6 @@ local function parseMarketEnter(protocol, msg)
   end
   local offers = msg:getU8()
 
-  local depotItems = {}
   local depotCount = msg:getU16()
   for i = 1, depotCount do
     local itemId = msg:getU16() -- item id
